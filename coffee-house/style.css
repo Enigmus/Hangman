@@ -609,3 +609,108 @@ body {
     color: var(--text-light, #e1d4c9);
   }
 }
+
+.contact {
+  margin-top: 97px;
+  padding-bottom: 30px;
+}
+.contact__content {
+  border-radius: 40px;
+  background: var(--background-container, #665f55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 100px;
+}
+.contact__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1 0;
+}
+.contact__header {
+  margin: 0;
+  color: var(--text-light, #e1d4c9);
+}
+.contact__header-span {
+  color: var(--text-accent, #b0907a);
+}
+.contact__socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact__social {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--border-light, #c1b6ad);
+  transition: all 0.3s ease-in-out;
+}
+.contact__social svg > * {
+  stroke: #E1D4C9;
+  transition: stroke 0.3s ease-in-out;
+}
+@media (any-hover: hover) {
+  .contact__social:hover {
+    background: var(--background-body, #E1D4C9);
+  }
+  .contact__social:hover svg > * {
+    stroke: #403F3D;
+  }
+}
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1 0;
+}
+.contact__info-header {
+  color: var(--text-light, #e1d4c9);
+  margin: 0;
+}
+.contact__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact__contacts li {
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+@media (any-hover: hover) {
+  .contact__contacts li:hover {
+    border-bottom-color: #e1d4c9;
+  }
+  .contact__contacts li:hover:nth-child(3) {
+    border-bottom-color: transparent;
+  }
+}
+.contact__item-contact {
+  text-decoration: none;
+  color: var(--text-light, #e1d4c9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+}
+.contact__item-contact_tel {
+  transform: translateY(-3px);
+}
+.contact__item-contact_time {
+  transform: translateY(-3px);
+}
