@@ -254,6 +254,10 @@ template {
   background: var(--background-body, #E1D4C9);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg-body);
   font-family: Inter;
@@ -352,6 +356,7 @@ body {
 }
 .hero__btn {
   color: var(--text-dark, #403F3D);
+  text-decoration: none;
   width: 44px;
   padding: 21px 78px;
 }
