@@ -303,6 +303,9 @@ body {
 .menu__item_active {
   border-bottom-color: var(--border-dark);
 }
+.menu__item_active .menu__link {
+  cursor: default;
+}
 @media (any-hover: hover) {
   .menu__item:hover {
     border-bottom-color: var(--border-dark);
@@ -581,11 +584,11 @@ body {
 }
 .btn-app_apps {
   padding-left: 19px;
-  padding-right: 54px;
+  padding-right: 58px;
 }
 .btn-app_goo {
   padding-left: 19px;
-  padding-right: 43px;
+  padding-right: 44px;
 }
 .btn-app > svg > * {
   fill: #403f3d;
@@ -770,6 +773,7 @@ body {
 }
 .tab-switcher__item_active {
   background: var(--background-container, #665f55);
+  cursor: default;
 }
 .tab-switcher__item_active .tab-switcher__icon {
   background: var(--background-body, #e1d4c9);
@@ -803,6 +807,7 @@ body {
 }
 
 .goods-cart {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
