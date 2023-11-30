@@ -12,6 +12,11 @@ main {
   display: block;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -197,7 +202,6 @@ template {
 }
 
 .heading-1-accent {
-  /*font-style: italic;*/
   display: inline-block;
   transform: skewX(171deg);
 }
@@ -209,7 +213,6 @@ template {
 }
 
 .heading-2-accent {
-  /* font-style: italic; */
   display: inline-block;
   transform: skewX(171deg);
 }
@@ -264,7 +267,12 @@ body {
 }
 
 .wrapper {
-  margin: 0 10px;
+  margin: 0 40px;
+}
+@media (max-width: 767.98px) {
+  .wrapper {
+    margin: 0 16px;
+  }
 }
 
 [class*=__container] {
@@ -284,7 +292,7 @@ body {
   background-image: url("img/img-hero.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   border-radius: 40px;
 }
 .enjoy__offer {
@@ -330,6 +338,7 @@ body {
 }
 .header__content {
   display: flex;
+  align-items: center;
 }
 .header__menu {
   display: flex;
@@ -340,14 +349,13 @@ body {
 .menu {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-grow: 1;
   gap: 40px;
 }
 .menu__item {
   list-style: none;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+  padding-bottom: 6px;
   position: relative;
   cursor: pointer;
 }
@@ -555,6 +563,7 @@ body {
 }
 
 .mobile-app {
+  display: none;
   margin: 100px 0 0;
 }
 .mobile-app__content {
