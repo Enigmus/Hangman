@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -269,7 +270,7 @@ body {
 .wrapper {
   margin: 0 40px;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 381px) {
   .wrapper {
     margin: 0 16px;
   }
@@ -294,6 +295,18 @@ body {
   background-position: center;
   background-size: cover;
   border-radius: 40px;
+}
+@media (min-width: 48em) and (max-width: 85em) {
+  @supports (padding-left: clamp( 3.75rem , 0.5067567568rem  +  6.7567567568vw , 6.25rem )) {
+    .enjoy__content {
+      padding-left: clamp( 3.75rem , 0.5067567568rem  +  6.7567567568vw , 6.25rem );
+    }
+  }
+  @supports not (padding-left: clamp( 3.75rem , 0.5067567568rem  +  6.7567567568vw , 6.25rem )) {
+    .enjoy__content {
+      padding-left: calc(3.75rem + 2.5 * (100vw - 48rem) / 37);
+    }
+  }
 }
 .enjoy__offer {
   display: flex;
@@ -332,6 +345,12 @@ body {
     width: 20px;
   }
 }
+@media (max-width: 769px) {
+  .enjoy__btn > img {
+    margin-left: 0px;
+    width: 20px;
+  }
+}
 
 .header {
   padding-top: 20px;
@@ -339,12 +358,18 @@ body {
 .header__content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .header__menu-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+}
+@media (max-width: 769px) {
+  .header__menu-wrap {
+    display: none;
+  }
 }
 .header__menu {
   display: flex;
@@ -394,7 +419,7 @@ body {
 }
 .menu__link {
   cursor: pointer;
-  color: var(--text-dark, #403F3D);
+  color: var(--text-dark, #403f3d);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -410,6 +435,47 @@ body {
   width: 20px;
   height: 20px;
   margin-left: 8px;
+}
+
+.burger {
+  cursor: pointer;
+  background: 0;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 100px;
+  border: 1px solid var(--border-dark, #665f55);
+  position: relative;
+  transform: translateY(-2px);
+}
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: var(--text-dark, #403f3d);
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.burger::before {
+  transform: translateY(-4px);
+}
+.burger::after {
+  transform: translateY(4px);
+}
+.burger_active::before {
+  transform: translateY(0px) rotate(45deg);
+}
+.burger_active::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+@media (min-width: 769px) {
+  .burger {
+    display: none;
+  }
 }
 
 .slider {
