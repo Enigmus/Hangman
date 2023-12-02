@@ -270,9 +270,48 @@ body {
 .wrapper {
   margin: 0 40px;
 }
-@media (max-width: 23.81125em) {
+@media (max-width: 48.06125em) and (min-width: 48em) {
   .wrapper {
-    margin: 0 16px;
+    margin-left: 2.5rem;
+  }
+}
+@media (max-width: 48.06125em) and (min-width: 23.75em) and (max-width: 48em) {
+  @supports (margin-left: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem )) {
+    .wrapper {
+      margin-left: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem );
+    }
+  }
+  @supports not (margin-left: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem )) {
+    .wrapper {
+      margin-left: calc(1rem + 1.5 * (100vw - 23.75rem) / 24.25);
+    }
+  }
+}
+@media (max-width: 48.06125em) and (max-width: 23.75em) {
+  .wrapper {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 48.06125em) and (min-width: 48em) {
+  .wrapper {
+    margin-right: 2.5rem;
+  }
+}
+@media (max-width: 48.06125em) and (min-width: 23.75em) and (max-width: 48em) {
+  @supports (margin-right: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem )) {
+    .wrapper {
+      margin-right: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem );
+    }
+  }
+  @supports not (margin-right: clamp( 1rem , -0.4690721649rem  +  6.1855670103vw , 2.5rem )) {
+    .wrapper {
+      margin-right: calc(1rem + 1.5 * (100vw - 23.75rem) / 24.25);
+    }
+  }
+}
+@media (max-width: 48.06125em) and (max-width: 23.75em) {
+  .wrapper {
+    margin-right: 1rem;
   }
 }
 
@@ -454,9 +493,9 @@ body {
 .burger::before, .burger::after {
   content: "";
   position: absolute;
-  width: 16px;
+  width: 18px;
   height: 2px;
-  background: var(--text-dark, #403f3d);
+  background: var(--border-dark, #665f55);
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 }
