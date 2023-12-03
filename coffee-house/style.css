@@ -371,6 +371,11 @@ body {
     width: auto;
   }
 }
+@media (max-width: calc(48.06125em - 1px)) {
+  .enjoy__offer {
+    gap: 40px;
+  }
+}
 .enjoy_p {
   margin: 0;
   color: var(--text-light, #e1d4c9);
@@ -743,6 +748,11 @@ body {
     margin-top: 104px;
   }
 }
+@media (max-width: 48.06125em) {
+  .mobile-app {
+    margin-top: 105px;
+  }
+}
 .mobile-app__content {
   display: flex;
   justify-content: center;
@@ -859,9 +869,13 @@ body {
 }
 
 .contact {
-  display: none;
   margin-top: 97px;
   padding-bottom: 30px;
+}
+@media (max-width: calc(48.06125em - 1px)) {
+  .contact {
+    margin-top: 96px;
+  }
 }
 .contact__content {
   border-radius: 40px;
@@ -871,6 +885,24 @@ body {
   align-items: center;
   gap: 100px;
   padding: 100px;
+  padding-left: clamp(60px, 8vw, 100px);
+  padding-right: clamp(60px, 8vw, 100px);
+}
+@media (max-width: 61.9375em) {
+  .contact__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 95px;
+  }
+}
+@media (max-width: calc(48.06125em - 1px)) {
+  .contact__content {
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
+    padding-top: clamp(60px, 4vw, 100px);
+    padding-bottom: clamp(55px, 4vw, 100px);
+    row-gap: clamp(40px, 10px + 2vw, 100px);
+  }
 }
 .contact__offer {
   display: flex;
@@ -886,6 +918,7 @@ body {
 }
 .contact__header-span {
   color: var(--text-accent, #b0907a);
+  display: inline;
 }
 .contact__socials {
   display: flex;
@@ -903,15 +936,15 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .contact__social svg > * {
-  stroke: #E1D4C9;
+  stroke: #e1d4c9;
   transition: stroke 0.3s ease-in-out;
 }
 @media (any-hover: hover) {
   .contact__social:hover {
-    background: var(--background-body, #E1D4C9);
+    background: var(--background-body, #e1d4c9);
   }
   .contact__social:hover svg > * {
-    stroke: #403F3D;
+    stroke: #403f3d;
   }
 }
 .contact__info {
@@ -974,6 +1007,11 @@ body {
 }
 .contact__item-contact_time {
   transform: translateY(-3px);
+}
+@media (max-width: 61.9375em) {
+  .contact__item-contact_time {
+    transform: translateY(-5px);
+  }
 }
 .menu-page {
   margin-bottom: 100px;
