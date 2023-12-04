@@ -17,34 +17,37 @@
     <div class="wrapper">
         <header class="header">
             <div class="header__container">
-                <div class="header__content">
-                    <a href="index.html" class="header__logo">
-                        <img src="img/logo.svg" alt="Logo">
-                    </a>
-                    <nav class="header__menu">
-                        <ul class="menu">
-                            <li class="menu__item">
-                                <a href="index.html#favorite-coffee" class="menu__link">Favorite coffee</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="index.html#about" class="menu__link">About</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="index.html#mobile-app" class="menu__link">Mobile app</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="menu.html#contact" class="menu__link">Contact us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <ul>
-                        <li class="menu__item menu__item_active">
-                            <a href="menu.html" class="menu__link menu__link_icon">Menu</a>
-                        </li>
+              <div class="header__content">
+                <a href="index.html" class="header__logo">
+                  <img src="img/logo.svg" alt="Logo">
+                </a>
+                <div class="header__menu-wrap">
+                  <nav class="header__menu">
+                    <ul class="menu">
+                      <li class="menu__item">
+                        <a href="index.html#favorite-coffee" class="menu__link">Favorite coffee</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="index.html#about" class="menu__link">About</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="index.html#mobile-app" class="menu__link">Mobile app</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="index.html#contact" class="menu__link">Contact us</a>
+                      </li>
                     </ul>
+                  </nav>
+                  <ul>
+                    <li class="menu__item menu__item_active">
+                      <a href="menu.html" class="menu__link menu__link_icon">Menu</a>
+                    </li>
+                  </ul>
                 </div>
+                <button class="burger" aria-label="Меню бургер"></button>
+              </div>
             </div>
-        </header>
+          </header>
         <main class="menu-page">
             <div class="menu-page__container">
                 <div class="menu-page__content">
@@ -159,6 +162,14 @@
                                     <h3 class="goods-cart__price heading-3">$6.50</h3>
                                 </div>
                             </div>
+                            <div class="menu-page__goods-show-more">
+                              <button class="menu-page__goods-more-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                  <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                              </button>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -168,7 +179,7 @@
             <div class="contact__container">
               <div class="contact__content">
                 <div class="contact__offer">
-                  <h2 class="contact__header heading-2">Sip, Savor, Smile.<span class="contact__header-span heading-2-accent">It’s coffee time!</span></h2>
+                  <h2 class="contact__header heading-2">Sip, Savor, Smile. <span class="contact__header-span heading-2-accent">It’s coffee time!</span></h2>
                   <div class="contact__socials">
                     <a href="twitter.com" class="contact__social">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
