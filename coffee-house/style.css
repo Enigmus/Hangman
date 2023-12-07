@@ -341,18 +341,11 @@ body.lock {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("img/img-hero.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   border-radius: 40px;
+  overflow: hidden;
+  position: relative;
   padding-left: clamp(60px, 8vw, 100px);
   padding-right: clamp(60px, 8vw, 100px);
-  /*  @include adaptiveValue("padding-right", 100, 60, 1, 1360, 768);
-   @include adaptiveValue("padding-left", 60, 16, 1, 768, 380);
-   @include adaptiveValue("padding-right", 60, 16, 1, 768, 380);
-   @include adaptiveValue("padding-top", 100, 58, 3, 768, 380);
-   @include adaptiveValue("padding-bottom", 100, 62, 3, 768, 380); */
 }
 @media (max-width: calc(48.06125em - 1px)) {
   .enjoy__content {
@@ -362,6 +355,12 @@ body.lock {
     padding-bottom: clamp(61px, 4vw, 100px);
   }
 }
+.enjoy__bg-video {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
 .enjoy__offer {
   display: flex;
   width: 530px;
@@ -369,6 +368,7 @@ body.lock {
   justify-content: center;
   align-items: flex-start;
   gap: 41px;
+  z-index: 2;
 }
 @media (max-width: 48.06125em) {
   .enjoy__offer {
@@ -484,6 +484,9 @@ body.lock {
   .header__menu-wrap_open {
     right: 0;
     opacity: 1;
+  }
+  .header__menu-wrap_no-transition {
+    transition: none !important;
   }
 }
 .header__menu {
