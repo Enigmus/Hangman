@@ -357,9 +357,11 @@ body.lock {
 }
 .enjoy__bg-video {
   position: absolute;
-  width: 100%;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 380px;
+  max-width: 1360px;
 }
 .enjoy__offer {
   display: flex;
