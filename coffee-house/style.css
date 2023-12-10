@@ -632,6 +632,25 @@ body.lock {
   justify-content: center;
   flex-direction: column;
 }
+.slider__content {
+  overflow: hidden;
+}
+.slider__slides-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+  will-change: transform;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: translateX(0px);
+  cursor: grab;
+}
+.slider__slide {
+  min-width: 100%;
+  user-select: none;
+}
 .slider__controls {
   display: flex;
   align-items: flex-start;
@@ -646,11 +665,30 @@ body.lock {
   height: 4px;
   border-radius: 100px;
   background: var(--border-light, #c1b6ad);
+  position: relative;
+  overflow: hidden;
 }
-.slider__control_active {
+.slider__control::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   background: var(--border-dark, #665f55);
+  transition: left 2.5s ease-in-out;
+}
+.slider__control_active::after {
+  left: 0;
+}
+@media (any-hover: hover) {
+  .slider__control:hover::after {
+    left: 0;
+  }
 }
 .slider__buttons {
+  pointer-events: none;
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -664,6 +702,7 @@ body.lock {
   }
 }
 .slider__btn {
+  pointer-events: auto;
   display: flex;
   width: 60px;
   height: 60px;
@@ -719,6 +758,7 @@ body.lock {
 .slide__img {
   width: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 .slide__header {
   margin: 0;
