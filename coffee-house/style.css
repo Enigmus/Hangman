@@ -558,6 +558,11 @@ body.lock {
   width: 100%;
   opacity: 1;
 }
+@media (max-width: 48.06125em) {
+  .menu__link::before {
+    transform: translateY(50px);
+  }
+}
 @media (any-hover: hover) {
   .menu__link:hover::before {
     width: 100%;
