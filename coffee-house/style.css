@@ -677,15 +677,19 @@ body.lock {
   width: 100%;
   height: 100%;
   background: var(--border-dark, #665f55);
-  transition: left 2.5s ease-in-out;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 .slider__control_active::after {
-  left: 0;
+  animation-name: animateActiveControl;
+  animation-duration: 3s;
 }
-@media (any-hover: hover) {
-  .slider__control:hover::after {
-    left: 0;
-  }
+.slider__control_no-active::after {
+  animation-name: animateNoActiveControl;
+  animation-duration: 0.5s;
 }
 .slider__buttons {
   pointer-events: none;
@@ -774,6 +778,22 @@ body.lock {
   color: var(--text-dark, #403f3d);
 }
 
+@keyframes animateActiveControl {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes animateNoActiveControl {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
 .about {
   margin: 100px 0 0;
 }
