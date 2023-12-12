@@ -144,18 +144,28 @@ if (slidesWrapp) {
 
     slidesWrapp.addEventListener("mouseenter", () => {
         isPause = true;
+        animatePause(isPause);
     });
     slidesWrapp.addEventListener("mouseleave", () => {
         isPause = false;
+        animatePause(isPause);
     });
 
     setInterval(() => {
         if (!isPause) changeSlide("right");
-        console.log(1);
-    }, 3000);
+    }, 5000);
 
-    const animatePause = () => {
-        //sliderControls
+    const animatePause = (isPause) => {
+        if(isPause){
+            for(control of [...sliderControls.children]){
+                control.classList.add("slider__control_pause");
+                console.log(control);
+            }
+        }else{
+            for(control of [...sliderControls.children]){
+                control.classList.remove("slider__control_pause")
+            }
+        }
     };
 }
 //tabs
@@ -187,8 +197,36 @@ if (tabSwitcher) {
         if (e.target.closest("li")) {
             tabSwitchNoActive();
             tabNoActive();
+            resetShowMore();
             li.classList.add("tab-switcher__item_active");
             tabs.children[li.id].classList.add("menu-page__tab_active");
+            showMore();
         }
     });
 }
+
+//show-more
+
+const showMore = () => {
+    let tabActive = document.querySelector(".menu-page__tab_active");
+    let showBtn = tabActive.querySelector(".menu-page__goods-more-btn");
+    showBtn.addEventListener("click", () => {
+        for (const tab of [...tabActive.children]) {
+            tab.style.display = "flex";
+        }
+        showBtn.parentElement.style.display = "none";
+    });
+};
+
+const resetShowMore = () => {
+    let tab1 = document.querySelector(".menu-page__tab");
+    let showBtn = tab1.querySelector(".menu-page__goods-more-btn");
+    if(showBtn){
+        for(let i = 0; i < tab1.children; i++){
+            if (i > 3){
+                tab1.children[i].style.display = 'none'
+            }
+        }
+        showBtn.parentElement.style.display = "flex";
+    }
+};

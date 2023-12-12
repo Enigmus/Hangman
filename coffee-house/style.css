@@ -558,6 +558,11 @@ body.lock {
   width: 100%;
   opacity: 1;
 }
+@media (max-width: 48.06125em) {
+  .menu__link::before {
+    transform: translateY(50px);
+  }
+}
 @media (any-hover: hover) {
   .menu__link:hover::before {
     width: 100%;
@@ -685,11 +690,14 @@ body.lock {
 }
 .slider__control_active::after {
   animation-name: animateActiveControl;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 .slider__control_no-active::after {
   animation-name: animateNoActiveControl;
   animation-duration: 0.5s;
+}
+.slider__control_pause::after {
+  animation-play-state: paused;
 }
 .slider__buttons {
   pointer-events: none;
