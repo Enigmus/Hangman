@@ -182,13 +182,13 @@ const showMore = (t) => {
     });
 };
 
-const resetShowMore = () => {
+const resetShowMore = (num) => {
     let tabs = document.querySelectorAll(".menu-page__tab");
     
     tabs.forEach((tab) => {
         let goods = tab.querySelectorAll('.goods-cart');
-        console.log(goods);
         let showBtn = tab.querySelector(".menu-page__goods-more-btn");
+        if(num < 769){
         if (goods.length > 4) {
             if (showBtn) {
                 for (let i = 0; i < goods.length; i++) {
@@ -199,6 +199,12 @@ const resetShowMore = () => {
                 showBtn.parentElement.style.display = "flex";
             }
         }else{
+            showBtn.parentElement.style.display = "none";
+        }
+        }else{
+            for (let i = 0; i < goods.length; i++) {                
+                    goods[i].style.display = "flex";                
+            }
             showBtn.parentElement.style.display = "none";
         }
     });
@@ -234,14 +240,14 @@ if (tabSwitcher) {
         if (e.target.closest("li")) {
             tabSwitchNoActive();
             tabNoActive();
-            resetShowMore();
+            resetShowMore(window.innerWidth);
             li.classList.add("tab-switcher__item_active");
             tabs.children[li.id].classList.add("menu-page__tab_active");
             showMore(tabs.children[li.id]);
         }
     });
     window.addEventListener("resize", () => {
-        if(window.innerWidth < 768)
-            resetShowMore();
+        
+            resetShowMore(window.innerWidth);
     });
 }
