@@ -63,6 +63,7 @@ if (slidesWrapp) {
         document.addEventListener("mouseup", slideEndSwipe);
         document.addEventListener("touchmove", slideMove);
         document.addEventListener("touchend", slideEndSwipe);
+        animatePause(true);
     };
 
     const slideMove = (e) => {
@@ -86,6 +87,7 @@ if (slidesWrapp) {
         document.removeEventListener("mouseup", slideEndSwipe);
         document.removeEventListener("touchmove", slideMove);
         document.removeEventListener("touchend", slideEndSwipe);
+        animatePause(false);
 
         if (Math.abs(posEnd) > posPercent) {
             if (posStart < posx) changeSlide("left");
