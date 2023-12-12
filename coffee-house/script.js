@@ -158,23 +158,58 @@ if (slidesWrapp) {
     }, 5000);
 
     const animatePause = (isPause) => {
-        if(isPause){
-            for(control of [...sliderControls.children]){
+        if (isPause) {
+            for (control of [...sliderControls.children]) {
                 control.classList.add("slider__control_pause");
-                console.log(control);
             }
-        }else{
-            for(control of [...sliderControls.children]){
-                control.classList.remove("slider__control_pause")
+        } else {
+            for (control of [...sliderControls.children]) {
+                control.classList.remove("slider__control_pause");
             }
         }
     };
 }
+
+//show-more
+
+const showMore = (t) => {    
+    let showBtn = t.querySelector("button");
+    showBtn.addEventListener("click", () => {
+        for (const tab of [...t.children]) {
+            tab.style.display = "flex";
+        }
+        showBtn.parentElement.style.display = "none";
+    });
+};
+
+const resetShowMore = () => {
+    let tabs = document.querySelectorAll(".menu-page__tab");
+    
+    tabs.forEach((tab) => {
+        let goods = tab.querySelectorAll('.goods-cart');
+        console.log(goods);
+        let showBtn = tab.querySelector(".menu-page__goods-more-btn");
+        if (goods.length > 4) {
+            if (showBtn) {
+                for (let i = 0; i < goods.length; i++) {
+                    if (i > 3) {
+                        goods[i].style.display = "none";
+                    }
+                }
+                showBtn.parentElement.style.display = "flex";
+            }
+        }else{
+            showBtn.parentElement.style.display = "none";
+        }
+    });
+};
+
 //tabs
 let tabSwitcher = document.querySelector(".tab-switcher");
 if (tabSwitcher) {
     let tabs = document.querySelector(".menu-page__tabs");
 
+    showMore(tabs.children[0]);
     let i = 0;
     for (const tabSwitch of [...tabSwitcher.children]) {
         tabSwitch.id = i;
@@ -202,33 +237,11 @@ if (tabSwitcher) {
             resetShowMore();
             li.classList.add("tab-switcher__item_active");
             tabs.children[li.id].classList.add("menu-page__tab_active");
-            showMore();
+            showMore(tabs.children[li.id]);
         }
+    });
+    window.addEventListener("resize", () => {
+        if(window.innerWidth < 768)
+            resetShowMore();
     });
 }
-
-//show-more
-
-const showMore = () => {
-    let tabActive = document.querySelector(".menu-page__tab_active");
-    let showBtn = tabActive.querySelector(".menu-page__goods-more-btn");
-    showBtn.addEventListener("click", () => {
-        for (const tab of [...tabActive.children]) {
-            tab.style.display = "flex";
-        }
-        showBtn.parentElement.style.display = "none";
-    });
-};
-
-const resetShowMore = () => {
-    let tab1 = document.querySelector(".menu-page__tab");
-    let showBtn = tab1.querySelector(".menu-page__goods-more-btn");
-    if(showBtn){
-        for(let i = 0; i < tab1.children; i++){
-            if (i > 3){
-                tab1.children[i].style.display = 'none'
-            }
-        }
-        showBtn.parentElement.style.display = "flex";
-    }
-};
