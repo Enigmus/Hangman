@@ -6,90 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hangman</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 
-<body>
-  <main class="main">
-    <div class="main__container">
-      <div class="main__content">
-        <div class="main__column main__column_left">
-          <div class="main__img-wrapp hangman">
-            <div class="hangman__wrapp">
-              <img src="img/hangman-img0.png" alt="hangman" class="hangman__part">
-              <img src="img/hangman-img1.png" alt="head" class="hangman__part">
-              <img src="img/hangman-img2.png" alt="body" class="hangman__part hangman__part_hide">
-              <img src="img/hangman-img3.png" alt="left-hand" class="hangman__part hangman__part_hide">
-              <img src="img/hangman-img4.png" alt="right-hand" class="hangman__part hangman__part_hide">
-              <img src="img/hangman-img5.png" alt="left-leg" class="hangman__part hangman__part_hide">
-              <img src="img/hangman-img6.png" alt="right-leg" class="hangman__part hangman__part_hide">
-            </div>
-          </div>
-          <h1 class="main__title">Игра Виселица</h1>
-        </div>
-        <div class="main__column main__column_right">
-          <div class="main__secret-word secret">
-            <div class="secret__letter secret__letter_hide">М</div>
-            <div class="secret__letter">А</div>
-            <div class="secret__letter">Р</div>
-            <div class="secret__letter">Ш</div>
-            <div class="secret__letter secret__letter_hide">Р</div>
-            <div class="secret__letter">У</div>
-            <div class="secret__letter">Т</div>
-            <div class="secret__letter">К</div>
-            <div class="secret__letter">А</div>
-          </div>
-          <div class="main__hint">Как называют автобус, совершающий поездки по определенному маршруту?</div>
-          <div class="main__lives">Осталось попыток: <span class="main__lives-span">0 / 6</span></div>
-          <div class="main__keyboard keyboard">
-            <button class="keyboard__key keyboard__key_off">А</button>
-            <button class="keyboard__key keyboard__key_on">Б</button>
-            <button class="keyboard__key">В</button>
-            <button class="keyboard__key">Г</button>
-            <button class="keyboard__key">Д</button>
-            <button class="keyboard__key">Е</button>
-            <button class="keyboard__key">Ё</button>
-            <button class="keyboard__key">Ж</button>
-            <button class="keyboard__key">З</button>
-            <button class="keyboard__key">И</button>
-            <button class="keyboard__key">Й</button>
-            <button class="keyboard__key">К</button>
-            <button class="keyboard__key">Л</button>
-            <button class="keyboard__key">М</button>
-            <button class="keyboard__key">Н</button>
-            <button class="keyboard__key">О</button>
-            <button class="keyboard__key">П</button>
-            <button class="keyboard__key">Р</button>
-            <button class="keyboard__key">С</button>
-            <button class="keyboard__key">Т</button>
-            <button class="keyboard__key">У</button>
-            <button class="keyboard__key">Ф</button>
-            <button class="keyboard__key">Х</button>
-            <button class="keyboard__key">Ц</button>
-            <button class="keyboard__key">Ч</button>
-            <button class="keyboard__key">Ш</button>
-            <button class="keyboard__key">Щ</button>
-            <button class="keyboard__key">Ъ</button>
-            <button class="keyboard__key">Ы</button>
-            <button class="keyboard__key">Ь</button>
-            <button class="keyboard__key">Э</button>
-            <button class="keyboard__key">Ю</button>
-            <button class="keyboard__key">Я</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <div class="modal">
-    <div class="modal__body">
-      <div class="modal__content">
-        <h3 class="modal__title">Поздравляем,<br> Вы угадали загаданное слово</h3>
-        <h2 class="modal__secret-word">Маршрутка</h2>
-        <button class="modal__btn modal__btn_new-game">Играть еще</button>
-        <button class="modal__btn modal__btn_close">Закрыть</button>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+<body class="page">
+
 </body>
 
 </html>
