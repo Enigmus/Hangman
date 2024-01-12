@@ -80,4 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         </div>
     `;
+
+    const generateKeys = () => {
+        let out = "";
+        for (let i = 0; i < alphabet.length; i += 1) {
+            out += `<button class="keyboard__key" data-status=true data-letter="${alphabet[i]}">${alphabet[i]}</button>\n`;
+        }
+        return out;
+    };
 });
