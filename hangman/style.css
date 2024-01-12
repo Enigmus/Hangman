@@ -216,6 +216,10 @@ body.lock {
   font-size: 1.875rem;
   gap: 5px;
 }
+.secret__letter {
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease-in-out;
+}
 .secret__letter_hide {
   color: #ffffff;
   border-bottom: 2px solid #2b3350;
