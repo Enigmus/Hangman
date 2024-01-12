@@ -184,4 +184,27 @@ document.addEventListener("DOMContentLoaded", function () {
             (el) => el.dataset.letter === letter
         ).dataset.status = "false");
     };
+
+    const gameProcess = (letter) => {
+        if (!word.toUpperCase().includes(letter)) {
+            lives += 1;
+            livesSpan.innerText = `${lives} / 6`;
+            hangmanImgs[lives].classList.remove("hangman__part_hide");
+            keyChange(letter);
+            if (lives === 6) modalOpen(word);
+        } else {
+            word.toUpperCase()
+                .split("")
+                .forEach((el, ind) => {
+                    if (el === letter) {
+                        secretDiv.childNodes[ind].classList.remove(
+                            "secret__letter_hide"
+                        );
+                        closeLetters -= 1;
+                    }
+                });
+            keyChange(letter, true);
+            if (closeLetters === 0) modalOpen(word, true);
+        }
+    };
 });
