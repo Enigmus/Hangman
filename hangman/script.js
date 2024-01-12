@@ -173,4 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (status) btn.classList.add("keyboard__key_on");
         else btn.classList.add("keyboard__key_off");
     };
+
+    const getStatusKey = (letter) => {
+        return [...keyboard.children].find((el) => el.dataset.letter === letter)
+            .dataset.status;
+    };
+
+    const setStatusKey = (letter, status = false) => {
+        return ([...keyboard.children].find(
+            (el) => el.dataset.letter === letter
+        ).dataset.status = "false");
+    };
 });
