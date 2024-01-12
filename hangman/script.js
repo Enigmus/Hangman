@@ -131,4 +131,26 @@ document.addEventListener("DOMContentLoaded", function () {
     var word = "";
     let hint = "";
     let closeLetters = 0;
+
+    const startGame = () => {
+        [word, hint] = generateSecret();
+        closeLetters = word.length;
+        [...hangmanImgs].forEach((el, index) =>
+            index !== 0 ? el.classList.add("hangman__part_hide") : false
+        );
+
+        let html = "";
+        for (let i = 0; i < word.length; i += 1) {
+            html += `<div class="secret__letter secret__letter_hide">
+              ${word[i].toUpperCase()}
+              </div>`;
+        }
+        secretDiv.innerHTML = html;
+        hintDiv.innerText = hint;
+        livesSpan.innerText = `0 / 6`;
+        keyboard.innerHTML = generateKeys();
+        lives = 0;
+
+        console.log(`Мы загадали слово => ${word}`);
+    };
 });
