@@ -153,4 +153,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log(`Мы загадали слово => ${word}`);
     };
+
+    const modalOpen = (word, lose = false) => {
+        modal.innerHTML = modalConstruct(word, lose);
+        modal.classList.add("modal_open");
+        document.querySelector("body").classList.add("lock");
+        modal
+            .querySelector(".modal__btn_new-game")
+            .addEventListener("click", () => {
+                modalClose();
+                startGame();
+            });
+    };
 });
