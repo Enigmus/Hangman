@@ -106,4 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>        
           `;
     };
+
+    const modalClose = () => {
+        modal.classList.remove("modal_open");
+        modal.innerHTML = "";
+        document.querySelector("body").classList.remove("lock");
+    };
 });
