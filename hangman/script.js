@@ -52,4 +52,32 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+
+    const mainTemp = `
+        <div class="main__container">
+        <div class="main__content">
+            <div class="main__column main__column_left">
+            <div class="main__img-wrapp hangman">
+                <div class="hangman__wrapp">
+                <img src="img/hangman-img0.png" alt="hangman" class="hangman__part">
+                <img src="img/hangman-img1.png" alt="head" class="hangman__part hangman__part_hide">
+                <img src="img/hangman-img2.png" alt="body" class="hangman__part hangman__part_hide">
+                <img src="img/hangman-img3.png" alt="left-hand" class="hangman__part hangman__part_hide">
+                <img src="img/hangman-img4.png" alt="right-hand" class="hangman__part hangman__part_hide">
+                <img src="img/hangman-img5.png" alt="left-leg" class="hangman__part hangman__part_hide">
+                <img src="img/hangman-img6.png" alt="right-leg" class="hangman__part hangman__part_hide"></img>
+                </div>
+            </div>
+            <h1 class="main__title">Игра Виселица</h1>
+            </div>
+            <div class="main__column main__column_right">
+            <div class="main__secret-word secret">                
+            </div>
+            <div class="main__hint"></div>
+            <div class="main__lives">Осталось попыток: <span class="main__lives-span">0 / 6</span></div>
+            <div class="main__keyboard keyboard"></div>
+            </div>
+        </div>
+        </div>
+    `;
 });
