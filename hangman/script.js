@@ -219,4 +219,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     };
+
+    startGame();
+    keyboard.addEventListener("click", (e) => letterChangeMouse(e));
+
+    document.addEventListener("keypress", (event) => {
+        if (!keyCode.flat(Infinity).includes(event.code)) return false;
+        let letter = keyCode.find((el) => el[0] === event.code)[1];
+
+        if (getStatusKey(letter) === "true") {
+            setStatusKey(letter);
+            gameProcess(letter);
+        } else {
+            return false;
+        }
+    });
 });
