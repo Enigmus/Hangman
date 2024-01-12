@@ -165,4 +165,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 startGame();
             });
     };
+
+    const keyChange = (letter, status = false) => {
+        const btn = [...keyboard.children].find(
+            (el) => el.dataset.letter === letter
+        );
+        if (status) btn.classList.add("keyboard__key_on");
+        else btn.classList.add("keyboard__key_off");
+    };
 });
