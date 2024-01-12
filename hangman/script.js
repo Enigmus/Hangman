@@ -207,4 +207,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (closeLetters === 0) modalOpen(word, true);
         }
     };
+
+    const letterChangeMouse = (e) => {
+        if (e.target.tagName !== "BUTTON") return false;
+        const keyLetter = e.target.innerText;
+        const keyStatus = e.target.dataset.status;
+        if (keyStatus === "true") {
+            e.target.dataset.status = "false";
+            gameProcess(keyLetter);
+        } else {
+            return false;
+        }
+    };
 });
