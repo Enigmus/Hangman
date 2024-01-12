@@ -91,4 +91,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const generateSecret = () =>
         question[Math.floor(Math.random() * question.length)];
+
+    const modalConstruct = (word, lose = false) => {
+        const text = lose
+            ? "Поздравляем,<br> Вы угадали загаданное слово"
+            : "Сожалеем,<br> Вы не угадали загаданное слово";
+        return `
+              <div class="modal__body">
+              <div class="modal__content">
+                  <h3 class="modal__title">${text}</h3>
+                  <h2 class="modal__secret-word">${word}</h2>
+                  <button class="modal__btn modal__btn_new-game">Играть еще</button>
+              </div>
+              </div>        
+          `;
+    };
 });
