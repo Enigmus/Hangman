@@ -88,4 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return out;
     };
+
+    const generateSecret = () =>
+        question[Math.floor(Math.random() * question.length)];
 });
