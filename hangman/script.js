@@ -112,4 +112,23 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.innerHTML = "";
         document.querySelector("body").classList.remove("lock");
     };
+
+    const page = document.querySelector(".page");
+    const main = document.createElement("main");
+    main.classList.add("main");
+    main.innerHTML = mainTemp;
+    page.append(main);
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    page.append(modal);
+
+    const hangmanImgs = main.querySelector(".hangman__wrapp").children;
+    const secretDiv = main.querySelector(".secret");
+    const hintDiv = main.querySelector(".main__hint");
+    const livesSpan = main.querySelector(".main__lives-span");
+    const keyboard = main.querySelector(".keyboard");
+    let lives = 0;
+    var word = "";
+    let hint = "";
+    let closeLetters = 0;
 });
