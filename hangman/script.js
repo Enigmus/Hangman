@@ -208,24 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    const letterChangeMouse = (e) => {
-        if (e.target.tagName !== "BUTTON") return false;
-        const keyLetter = e.target.innerText;
-        const keyStatus = e.target.dataset.status;
-        if (keyStatus === "true") {
-            e.target.dataset.status = "false";
-            gameProcess(keyLetter);
-        } else {
-            return false;
-        }
-    };
-
-    startGame();
-    keyboard.addEventListener("click", (e) => letterChangeMouse(e));
-
-    document.addEventListener("keypress", (event) => {
-        if (!keyCode.flat(Infinity).includes(event.code)) return false;
-        let letter = keyCode.find((el) => el[0] === event.code)[1];
+    keyboard.addEventListener("click", (event) => {
+        if (event.target.tagName !== "BUTTON") return false;
+        const letter = event.target.innerText;
 
         if (getStatusKey(letter) === "true") {
             setStatusKey(letter);
@@ -234,4 +219,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     });
+
+    document.addEventListener("keypress", (event) => {
+        if (!keyCode.flat(Infinity).includes(event.code)) return false;
+        const letter = keyCode.find((el) => el[0] === event.code)[1];
+
+        if (getStatusKey(letter) === "true") {
+            setStatusKey(letter);
+            gameProcess(letter);
+        } else {
+            return false;
+        }
+    });
+
+    startGame();
 });
