@@ -13,6 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
         ["Сахара", "Крупнейшая жаркая пустыня?"],
         ["Кирпич", 'Из чего сделан самый крепкий дом в "Трех поросятах"?'],
         ["Чехия", "В какой стране находится Прага?"],
+        ["Дятел", "Кого из птиц называют санитаром леса?"],
+        ["Россия", "Какая страна самая большая?"],
+        ["Лев", "Кого называют «царём зверей»?"],
+        ["Восемь", "Сколько лапок у паука?"],
+        ["Египет", "Где правили фараоны?"],
+        ["Москва", "Как называется самый большой город в Европе?"],
+        ["Нева", "На какой реке стоит Санкт-Петербург?"],
+        ["Зелёный", "Какой дуб стоит у Лукоморья?"],
+        ["Учёный", "Какой кот ходит по цепи кругом в сказке Пушкина?"],
+        ["Рюкзак", "Как по-другому можно назвать школьный портфель?"],
+        ["Двенадцать", "Сколько месяцев в году?"],
+        ["Лодка", "Транспорт, на котором можно переплыть водоём?"],
+        ["Петух", "Какая птица не несёт яйца?"],
+        ["Отпуск", "Как у родителей называются каникулы?"],
+        ["Лёд", "Как называют замёрзшую воду?"],
+        ["Подошва", "Нижняя поверхность у ваших ботинок как называется?"],
+        ["Миллион", "В каком числе 6 нулей?"],
+        ["Ящерица", "Кто отбрасывает хвост, когда за него хватают?"],
+        ["Ленивец", "Кто самое медлительное животное?"],
+        ["Семь", "Сколько цветов в радуге?"],
+        ["Венера", "Какая планета самая горячая?"],
+        ["Четыре", "Сколько сторон света есть?"],
+        ["Евразия", "На каком материке мы живём?"],
     ];
 
     const keyCode = [
@@ -208,24 +231,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    const letterChangeMouse = (e) => {
-        if (e.target.tagName !== "BUTTON") return false;
-        const keyLetter = e.target.innerText;
-        const keyStatus = e.target.dataset.status;
-        if (keyStatus === "true") {
-            e.target.dataset.status = "false";
-            gameProcess(keyLetter);
-        } else {
-            return false;
-        }
-    };
-
-    startGame();
-    keyboard.addEventListener("click", (e) => letterChangeMouse(e));
-
-    document.addEventListener("keypress", (event) => {
-        if (!keyCode.flat(Infinity).includes(event.code)) return false;
-        let letter = keyCode.find((el) => el[0] === event.code)[1];
+    keyboard.addEventListener("click", (event) => {
+        if (event.target.tagName !== "BUTTON") return false;
+        const letter = event.target.innerText;
 
         if (getStatusKey(letter) === "true") {
             setStatusKey(letter);
@@ -234,4 +242,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     });
+
+    document.addEventListener("keypress", (event) => {
+        if (!keyCode.flat(Infinity).includes(event.code)) return false;
+        const letter = keyCode.find((el) => el[0] === event.code)[1];
+
+        if (getStatusKey(letter) === "true") {
+            setStatusKey(letter);
+            gameProcess(letter);
+        } else {
+            return false;
+        }
+    });
+
+    startGame();
 });
