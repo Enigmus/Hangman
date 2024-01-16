@@ -244,6 +244,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("keypress", (event) => {
+        if (document.querySelector(".modal_open")) return false;
+
         if (!keyCode.flat(Infinity).includes(event.code)) return false;
         const letter = keyCode.find((el) => el[0] === event.code)[1];
 
